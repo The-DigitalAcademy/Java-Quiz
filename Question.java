@@ -9,7 +9,7 @@ public class Question {
     private String opt3;
     private String opt4;
     private String answer;
-    
+
     // variables to store question details
     public Question(int id, String question, String opt1, String opt2, String opt3, String opt4, String answer) {
 
@@ -22,7 +22,8 @@ public class Question {
         this.answer = answer;
 
     }
-//Getter and setter methods for id, questions, options and answers
+
+    // Getter and setter methods for id, questions, options and answers
     public int getId() {
         return id;
     }
@@ -79,5 +80,11 @@ public class Question {
         this.answer = answer;
     }
 
-
+    // Overide to String() method to provide a string representation of time
+    @Override
+    public String toString() {
+        // A string representation of the Question object
+        return "Question [id=" + id + ", question=" + question + ", opt1=" + opt1 + ", opt2=" + opt2 + ", opt3=" + opt3
+                + ", opt4=" + opt4 + ", answer=" + answer + "]";
+    }
 }
