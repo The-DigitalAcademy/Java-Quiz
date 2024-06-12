@@ -1,4 +1,6 @@
+package main;
 // Main class to run the quiz game
+
 public class Game {
 
      // Main method to execute the program
