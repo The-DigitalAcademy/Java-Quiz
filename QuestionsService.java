@@ -1,15 +1,37 @@
 // Service class to manage and conduct a quiz
+
+import java.util.Scanner;
+
 public class QuestionsService {
 
-
-// Array to store questions
+    // Array to store questions
     Question[] questions = new Question[5];
 
     // Array to store user selections
     String selection[] = new String[5];
 
-    // Constructor to initialize the questions array with predefined questions
-    public QuestionsService() {
+    public void playQuiz() {
+
+        int i = 0;
+        for (Question q : questions) {
+            System.out.println("Question no. : " + q.getId());
+            System.out.println(q.getQuestion());
+            System.out.println(q.getOpt1());
+            System.out.println(q.getOpt2());
+            System.out.println(q.getOpt3());
+            System.out.println(q.getOpt4());
+            Scanner sc = new Scanner(System.in);
+            selection[i] = sc.nextLine();
+            i++;
+        }
+
+        for (String s : selection) {
+
+            System.out.println(s);
+
+        }
+
+
 
         questions[0] = new Question(001, "What is the correct syntax to Output, 'Hello World'", "System.out.printIn(“hello World”);", "echo(“hello World”);",
         "System(“hello world”);", "print(“hello world”)", 
@@ -51,6 +73,30 @@ questions[4] = new Question(005, "Which operator is used to add together two val
         questions[9] = new Question(005, "Which method can be used to find the highest value of x and y?", "Math.largest(x,y)",
         "Math.max(x,y)", "Math.maxNum(x,y)", "Math.maximum(x,y)",
         "Math.max(x,y)");
+
     }
+
+    // Method to calculate and print the user's score
+    public void printScore() {
+
+        int score = 0;
+
+        for (int i = 0; i < questions.length; i++) {
+            Question que = questions[i];
+            String actualAnswer = que.getAnswer();
+            String userAnswer = selection[i].toLowerCase();
+
+            // Compare user answer with actual answer
+            if (actualAnswer.equals(userAnswer)) {
+                score++;
+            }
+
+             // Display the final score5
+        System.out.println("Your score is : " + score + "/1");
+        
+        }
+       
+    }
+
 
 }
