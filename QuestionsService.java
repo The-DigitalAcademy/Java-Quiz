@@ -33,4 +33,27 @@ public class QuestionsService {
 
     }
 
+    // Method to calculate and print the user's score
+    public void printScore() {
+
+        int score = 0;
+
+        for (int i = 0; i < questions.length; i++) {
+            Question que = questions[i];
+            String actualAnswer = que.getAnswer();
+            String userAnswer = selection[i].toLowerCase();
+
+            // Compare user answer with actual answer
+            if (actualAnswer.equals(userAnswer)) {
+                score++;
+            }
+
+             // Display the final score5
+        System.out.println("Your score is : " + score + "/1");
+        
+        }
+       
+    }
+
+
 }
