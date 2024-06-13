@@ -81,10 +81,9 @@ public class Question {
         this.answer = answer;
     }
 
-    // Overide to String() method to provide a string representation of time
+    // Overide to String() method to provide a string representation of the object
     @Override
     public String toString() {
-        // A string representation of the Question object
         return "Question [id=" + id + ", question=" + question + ", opt1=" + opt1 + ", opt2=" + opt2 + ", opt3=" + opt3
                 + ", opt4=" + opt4 + ", answer=" + answer + "]";
     }
