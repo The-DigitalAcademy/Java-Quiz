@@ -60,17 +60,27 @@ public class QuestionsService {
 
     }
 
+    // created method to playQuiz
     public void playQuiz() {
 
+        //initializing loop
         int i = 0;
+        
+        //looping trough the questions
         for (Question q : questions) {
+
+//for each question the program print Q ID, Q text, Options
             System.out.println("Question no. : " + q.getId());
             System.out.println(q.getQuestion());
             System.out.println(q.getOpt1());
             System.out.println(q.getOpt2());
             System.out.println(q.getOpt3());
             System.out.println(q.getOpt4());
+
+            //created the scanner for reading the users input from the consol, read users answer 
             Scanner sc = new Scanner(System.in);
+
+            //the index is then moved to the selected array
             selection[i] = sc.nextLine();
             i++;
         }
